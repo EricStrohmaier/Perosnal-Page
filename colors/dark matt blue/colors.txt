@@ -1,0 +1,11 @@
+Your selected colors:
+
+    Primary: #ededed (RGB: 237, 237, 237)
+    Secondary: #222546 (RGB: 34, 37, 70)
+    Primary Button: #29658a (RGB: 41, 101, 138)
+    Secondary Button: #474866 (RGB: 71, 72, 102)
+    Accent: #d1d2d6 (RGB: 209, 210, 214)
+
+Realtime Colors link for selected colors: https://realtimecolors.com/?colors=ededed-222546-29658a-474866-d1d2d6
+
+Thanks for using RealtimeColors.com!

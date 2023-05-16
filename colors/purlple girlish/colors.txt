@@ -1,0 +1,11 @@
+Your selected colors:
+
+    Primary: #1d4706 (RGB: 29, 71, 6)
+    Secondary: #fafffb (RGB: 250, 255, 251)
+    Primary Button: #e4bdfa (RGB: 228, 189, 250)
+    Secondary Button: #ebffe0 (RGB: 235, 255, 224)
+    Accent: #b8d0f9 (RGB: 184, 208, 249)
+
+Realtime Colors link for selected colors: https://realtimecolors.com/?colors=1d4706-fafffb-e4bdfa-ebffe0-b8d0f9
+
+Thanks for using RealtimeColors.com!

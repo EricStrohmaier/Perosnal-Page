@@ -1,0 +1,11 @@
+Your selected colors:
+
+    Primary: #e9c46a (RGB: 233, 196, 106)
+    Secondary: #264653 (RGB: 38, 70, 83)
+    Primary Button: #e76f51 (RGB: 231, 111, 81)
+    Secondary Button: #2a9d8f (RGB: 42, 157, 143)
+    Accent: #e9c46a (RGB: 233, 196, 106)
+
+Realtime Colors link for selected colors: https://realtimecolors.com/?colors=e9c46a-264653-e76f51-2a9d8f-e9c46a
+
+Thanks for using RealtimeColors.com!
