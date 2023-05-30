@@ -1,52 +1,32 @@
-
+import {useState} from 'react';
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import ColorStyles from "../hooks/ColorStyles";
 
-import useColorTheme from "../hooks/ColorTheme";
 
 const Landing = ({ setSelectedPage }) => {
 
-  const backgroundAccent = {
-    theme1: 'bg-theme1-accent',
-    theme3: 'bg-theme3-accent  ',
-    theme2: 'bg-theme2-accent ',
-    theme4: 'bg-theme4-accent ',
-    theme5: 'bg-theme5-accent ',
-    theme6: 'bg-theme6-accent ',
-    theme7: 'bg-theme7-accent ',
-    theme8: 'bg-theme8-accent ',
-    // Add more color variants for each theme
-  };
-    const backgroundPrimary = {
-    theme1: 'bg-theme1-primary ',
-    theme3: 'bg-theme3-primary ',
-    theme2: 'bg-theme2-primary ',
-    theme4: 'bg-theme4-primary ',
-    theme5: 'bg-theme5-primary ',
-    theme6: 'bg-theme6-primary ',
-    theme7: 'bg-theme7-primary ',
-    theme8: 'bg-theme8-primary ',
-    // Add more color variants for each theme
-  };  const backgroundSecondary = {
-    theme1: 'bg-theme1-secondary',
-    theme3: 'bg-theme3-secondary',
-    theme2: 'bg-theme2-secondary',
-    theme4: 'bg-theme4-secondary',
-    theme5: 'bg-theme5-secondary',
-    theme6: 'bg-theme6-secondary',
-    theme7: 'bg-theme7-secondary',
-    theme8: 'bg-theme8-secondary',
-    // Add more color variants for each theme
-  };
-  
-  const colorTheme = useColorTheme();
-  const themeName = colorTheme.name;
-  const accent = backgroundAccent[themeName];
-  const primary = backgroundPrimary[themeName];
-  const secondary = backgroundSecondary[themeName];
+  const [isHovered, setIsHovered] = useState(false);
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const {accent,primary,secondary} = ColorStyles();
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+
+  const [rotate, setRotate] = useState(false);
+
+  const handleImageClick = () => {
+    setRotate(true); 
+    setTimeout(() => {
+      setRotate(false);
+    }, 2000);  
+  };
   return (
     <section
       id="home"
@@ -62,9 +42,7 @@ const Landing = ({ setSelectedPage }) => {
             hidden: { opacity: 0, x: -50 },
             visible: { opacity: 1, x: 0 },
           }}
-        >
-      {/* IMAGE SECTION */}
-      
+        >      
         {/* class is for the form behind the picture */}
         {isAboveLarge ? (
           <div className="relative group">
@@ -114,6 +92,7 @@ const Landing = ({ setSelectedPage }) => {
             viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
           </p>
         </motion.div>
+       
 
         {/* CALL TO ACTIONS */}
         <motion.div
@@ -129,15 +108,23 @@ const Landing = ({ setSelectedPage }) => {
         >
         {/* stlye buttons different  + download cv  */}
         <AnchorLink
-        className={`relative  ${primary}  rounded-lg py-3 px-7 font-semibold transition duration-200 overflow-hidden hover:-translate-y-1`} 
+        className={`relative  ${primary} z-10  rounded-lg py-3 px-7 font-semibold transition duration-200  hover:-translate-y-1 `} 
         onClick={() => setSelectedPage("contact")}
         href="#contact"
-      >
-        <span className="relative z-10">Contact Me</span>
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+    > 
+    <div
+        className={`absolute w-2/3 h-full scale-150 rounded-lg ${primary} z-0 filter blur-lg opacity-0 ${
+          isHovered ? 'opacity-80' : ''
+        } duration-200`}
+      ></div>
+      <span className="relative z-10">Contact Me</span>
+     
       </AnchorLink>
         <div className="w-3 h-1"></div>
           <AnchorLink
-            className={`rounded-lg  hover:-translate-y-1  transition duration-200 ${secondary} p-0.5 `} 
+            className={`rounded-lg  hover:-translate-y-1  transition duration-200 ${secondary} p-0.5 z-10`} 
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
@@ -146,9 +133,12 @@ const Landing = ({ setSelectedPage }) => {
             </div>
           </AnchorLink>
         </motion.div>
-{/* social media tags ?  */}
-        {/* <motion.div
-          className="flex mt-5 justify-center md:justify-start"
+      
+          
+        
+
+        <motion.div
+          className="flex mt-8 justify-center md:justify-start"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
@@ -158,8 +148,24 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <SocialMediaIcons />
-        </motion.div> */}
+        <div className='flex align-middle' onClick={handleImageClick}>
+          
+        <motion.img
+       variants ={{
+              hidden: { rotate: 0 },
+              rotate: {
+                rotate: 360,
+                transition: { duration: 1.5 },
+    },}}
+                  initial="hidden"
+                  animate={rotate ? "rotate": "hidden"}
+                  alt="profile"
+                  className="spin-image"
+                  src="assets/color-wheel.png"
+    />
+        
+       <p >Click here to change the color theme </p></div>
+        </motion.div>
       </div>
     </section>
   );

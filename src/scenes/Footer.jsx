@@ -1,8 +1,11 @@
 import SocialMediaIcons from "../components/SocialMediaIcons";
+import ColorStyles from "../hooks/ColorStyles";
 
 const Footer = () => {
+  const {primary} = ColorStyles();
+
   return (
-    <footer className="h-28 bg-background  pt-10">
+    <footer className={`h-28 ${primary}  pt-10`}>
       <div className="w-10/12 mx-auto">
       
         <div className="md:flex  md:justify-between text-center ">

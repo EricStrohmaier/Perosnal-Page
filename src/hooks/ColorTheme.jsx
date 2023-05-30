@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
 import {themes} from "../hooks/themes"
-
-
 
 const useColorTheme = () => {
   const [colorTheme, setColorTheme] = useState({});
@@ -10,10 +7,9 @@ const useColorTheme = () => {
   useEffect(() => {
     const getCurrentTheme = () => {
       const currentTime = new Date();
-       const currentHour = currentTime.getHours();
-      // const currentHour = 6
-       ;
-
+      //const currentHour = currentTime.getHours();
+      const currentHour = 22;
+       
       // Define your time ranges for each theme
       const themeRanges = [
         { theme: 'theme1', name: "theme1", startHour: 6, endHour: 9 }, // theme1 from 6 AM to 11 AM
@@ -35,24 +31,24 @@ const useColorTheme = () => {
       if (currentTheme) {
         const themeColorValues = themes[currentTheme.theme];
         setColorTheme({ ...themeColorValues, name: currentTheme.name });
-
       }
+  
     };
-   
     getCurrentTheme();  
+    
+// eslint-disable-next-line react-hooks/rules-of-hooks
+  getCurrentTheme();
 
-    // Check and update the theme every minute
-    const timer = setInterval(getCurrentTheme, 60000);
+  
+  // Check and update the theme every minute
+  const timer = setInterval(getCurrentTheme, 60000);
 
-    // Clean up the timer when the component unmounts
-    return () => clearInterval(timer);
-  }, []);
+  // Clean up the timer when the component unmounts
+  return () => clearInterval(timer);
+}, []);
 
-  // useEffect(() => {
-  //   console.log(colorTheme);
-  // }, [colorTheme]);
   return colorTheme;
- 
+
 };
 
 //   const handleChangeColor = (direction) => {
@@ -68,5 +64,6 @@ const useColorTheme = () => {
 //     const newColorTheme = colors[newIndex];
 //     setColorTheme(newColorTheme);
 //   };
+
 
 export default useColorTheme;

@@ -1,15 +1,17 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
+import ColorStyles from "../hooks/ColorStyles";
 
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
+  const { colorText, primaryColorText, textColorSecondary} = ColorStyles();
   const lowerCasePage = page.toLowerCase();
   return (
     <AnchorLink
       className={`${
-        selectedPage === lowerCasePage ? "text-primary-color" : ""
-      } hover:text-primary-color transition duration-500`}
+        selectedPage === lowerCasePage ? `${colorText}` : ""
+      } ${primaryColorText} transition duration-500`}
       href={`#${lowerCasePage}`}
       onClick={() => setSelectedPage(lowerCasePage)}
     >
@@ -19,9 +21,10 @@ const Link = ({ page, selectedPage, setSelectedPage }) => {
 };
 
 const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
+  const { secondary,primary, primaryColorText } = ColorStyles();
   const [isMenuToggled, setIsMenuToggled] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
-  const navbarBackground = isTopOfPage ? "" : "bg-secondary-color";
+  const navbarBackground = isTopOfPage ? "" : `${primary}`;
   return (
     <>
       {isDesktop ? (
@@ -55,7 +58,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         </nav>
       ) : (
         <button
-          className="rounded-full right-0 fixed top-0 m-6 bg-primary-color p-2"
+          className={`rounded-full right-0 fixed top-0 m-6 ${primary} p-2`}
           onClick={() => setIsMenuToggled(!isMenuToggled)}
         >
           <img cl alt="menu-icon" src="../assets/menu-icon.svg" />
@@ -63,16 +66,16 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
       )}
 
       {!isDesktop && isMenuToggled && (
-        <div className="fixed z-40 right-0 bottom-0 h-full bg-secondary-color w-[200px]">
+        <div className={`fixed z-40 right-0 bottom-0 h-full ${secondary} w-[200px]`}>
           {/* CLOSE ICON */}
           <div className="flex justify-end p-9">
             <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
-              <img alt="close-icon" src="../assets/close-icon.svg" />
+              <img className={`${primary}`} alt="close-icon" src="../assets/close-icon.svg" />
             </button>
           </div>
 
           {/* MENU ITEMS */}
-          <div className="flex flex-col text-center gap-10 mx-[23%] text-2xl text-primary-text">
+          <div className={`flex flex-col text-center gap-10 mx-[23%] text-2xl `}>
             <Link
               page="Home"
               selectedPage={selectedPage}

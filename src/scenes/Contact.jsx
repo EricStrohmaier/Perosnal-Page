@@ -1,6 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import ColorStyles from "../hooks/ColorStyles";
 
 const Contact = () => {
   const {
@@ -17,6 +18,7 @@ const Contact = () => {
     }
   };
 
+  const { textColorSecondary,primary,textColorAccent,secondary ,primaryColorText , hoverPrimaryColor}= ColorStyles();
   return (
     <section id="contact" className="contact py-24">
       {/* HEADINGS */}
@@ -33,7 +35,7 @@ const Contact = () => {
       >
         <div>
           <p className="font-oswald font-semibold text-4xl">
-            <span className="text-primary-color">CONTACT ME</span> TO GET STARTED
+            <span className={`${textColorSecondary}`}>CONTACT ME</span> TO GET STARTED
           </p>
           <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />
@@ -71,11 +73,11 @@ const Contact = () => {
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
+            action="https://formsubmit.co/eric.strohmaier00@gmail.com"
             method="POST"
           >
             <input
-              className="w-full bg-secondary-color font-semibold placeholder-primary-text p-3"
+              className={`w-full ${secondary} font-semibold placeholder-primary-text p-3`}
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -84,15 +86,15 @@ const Contact = () => {
               })}
             />
             {errors.name && (
-              <p className="text-accent mt-1">
+              <p className={`text-accent ${textColorAccent} mt-1`}>
                 {errors.name.type === "required" && "This field is required."}
                 {errors.name.type === "maxLength" && "Max length is 100 char."}
               </p>
             )}
 
             <input
-              className="w-full bg-secondary-color font-semibold placeholder-primary-text p-3 mt-5"
-              type="text"
+              className={`w-full ${secondary} font-semibold placeholder-primary-text p-3 mt-5`}
+              type="email"
               placeholder="EMAIL"
               {...register("email", {
                 required: true,
@@ -100,14 +102,14 @@ const Contact = () => {
               })}
             />
             {errors.email && (
-              <p className="text-accent mt-1">
+              <p className={`text-accent ${textColorAccent} mt-1`}>
                 {errors.email.type === "required" && "This field is required."}
                 {errors.email.type === "pattern" && "Invalid email address."}
               </p>
             )}
 
             <textarea
-              className="w-full bg-secondary-color font-semibold placeholder-primary-text p-3 mt-5"
+              className={`w-full ${secondary} font-semibold placeholder-primary-text p-3 mt-5`}
               name="message"
               placeholder="MESSAGE"
               rows="4"
@@ -118,7 +120,7 @@ const Contact = () => {
               })}
             />
             {errors.message && (
-              <p className="text-accent mt-1">
+              <p className={`text-accent ${textColorAccent} mt-1`}>
                 {errors.message.type === "required" &&
                   "This field is required."}
                 {errors.message.type === "maxLength" &&
@@ -127,7 +129,7 @@ const Contact = () => {
             )}
 
             <button
-              className="p-5 bg-secondary-color font-semibold text-primary-text mt-5 hover:bg-primary-color hover:text-background transition duration-500"
+              className={`p-5 ${secondary} font-semibold  mt-5  ${hoverPrimaryColor} transition duration-500`}
               type="submit"
             >
               SEND ME A MESSAGE

@@ -44,8 +44,8 @@ module.exports = {
         theme6: {
           textColor: '#fbfefd',
           background: '#1f2531',
-          primary: '#f09f2d',
-          secondary: '#0b3c5d',
+          primary:'#0b3c5d' ,
+          secondary: '#f09f2d',
           accent: '#328bc3',
         },
         theme7: {
