@@ -6,11 +6,11 @@ const Footer = () => {
       <div className="w-10/12 mx-auto">
       
         <div className="md:flex  md:justify-between text-center ">
-          <p className="absoulute">
+          <p className="absoulute pb-5">
             <SocialMediaIcons />
             
           </p>
-          <p className="font-playfair text-md text-primary-color">
+          <p className="font-playfair text-md text-primary-color pb-5">
           Copyright © 2023 All Rights Reserved
           </p>
         </div>

@@ -25,16 +25,16 @@ const MySkills = () => {
         >
         <div className=" mx-32 "> 
           <div className="flex flex-col items-center"> 
-          <p className="tracking-wider font-oswald font-semibold text-4xl mb-5">SKILL  
+          <p className="tracking-wider font-oswald font-semibold text-4xl mt-10 mb-10">SKILL  
           <span className="text-primary-color"> LIBRARY</span>
           </p>
           </div>
           {/* text stactic and flying in on hover  */}
 
-        <div className="flex flex-wrap w-full relative">
+        <div className="flex flex-wrap w-full relative ">
           {/* Book shelfs to the left  animate seperat?*/}
           <div
-        className="relative w-2/3 max-w-[200px] md:max-w-[350px] flex float-left "
+        className="relative w-2/3 max-w-[200px] md:max-w-[350px] flex float-left"
         onMouseEnter={() => setFirstHovered(true)}
         onMouseLeave={() => setFirstHovered(false)}
       >
@@ -45,7 +45,7 @@ const MySkills = () => {
         />
         <img
           alt="yellow book shelf"
-          className={`absolute opacity-0 transition-opacity duration-200 ${
+          className={`absolute opacity-0 transition-opacity duration-200  ${
             firstHovered ? 'opacity-100' : ''
           }`}
           src="assets/yellow-transparent.png"

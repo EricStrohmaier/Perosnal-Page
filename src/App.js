@@ -7,13 +7,16 @@ import Projects from "./scenes/Projects";
 import Contact from "./scenes/Contact";
 import Footer from "./scenes/Footer";
 import useMediaQuery from "./hooks/useMediaQuery";
-import { useEffect, useState } from "react";
+import React,{ useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import useColorTheme from "./hooks/ColorTheme";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   const isDesktop = useMediaQuery("(min-width: 1060px)");
+
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,14 +30,31 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+    const colorVariants = {
+    theme1: 'bg-theme1-background text-theme1-textColor',
+    theme3: 'bg-theme3-background text-theme2-textColor  ',
+    theme2: 'bg-theme2-background text-theme3-textColor ',
+    theme4: 'bg-theme4-background text-theme4-textColor ',
+    theme5: 'bg-theme5-background text-theme5-textColor ',
+    theme6: 'bg-theme6-background text-theme6-textColor ',
+    theme7: 'bg-theme7-background text-theme7-textColor ',
+    theme8: 'bg-theme8-background text-theme8-textColor ',
+    // Add more color variants for each theme
+  };
+  const colorTheme = useColorTheme();
+  const themeName = colorTheme.name;
+  const appClass = colorVariants[themeName];
+
+
   return (
-    <div className="app">
+    <div className={`${appClass}`}>
+    
       <Navbar
         isTopOfPage={isTopOfPage}
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
-      <div className="w-5/6 mx-auto md:h-full">
+      <div className="w-5/6 mx-auto md:h-full ">
         {isDesktop && (
           <DotGroup
             selectedPage={selectedPage}

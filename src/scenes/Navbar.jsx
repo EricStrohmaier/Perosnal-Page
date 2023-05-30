@@ -46,11 +46,6 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
                 setSelectedPage={setSelectedPage}
               />
               <Link
-                page="Testimonials"
-                selectedPage={selectedPage}
-                setSelectedPage={setSelectedPage}
-              />
-              <Link
                 page="Contact"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
@@ -60,10 +55,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
         </nav>
       ) : (
         <button
-          className="rounded-full right-0 fixed top-0 m-6 bg-seconary-color p-2"
+          className="rounded-full right-0 fixed top-0 m-6 bg-primary-color p-2"
           onClick={() => setIsMenuToggled(!isMenuToggled)}
         >
-          <img alt="menu-icon" src="../assets/menu-icon.svg" />
+          <img cl alt="menu-icon" src="../assets/menu-icon.svg" />
         </button>
       )}
 
@@ -90,11 +85,6 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             />
             <Link
               page="Projects"
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
-            <Link
-              page="Testimonials"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
