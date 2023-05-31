@@ -5,7 +5,9 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import ColorStyles from "../hooks/ColorStyles";
 
 
-const Landing = ({ setSelectedPage }) => {
+
+
+const Landing = ({ setSelectedPage  }) => {
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -16,17 +18,21 @@ const Landing = ({ setSelectedPage }) => {
     setIsHovered(false);
   };
 
-  const {accent,primary,secondary} = ColorStyles();
+  
+  const {accent,primary,secondary,handleChangeTheme} = ColorStyles();
+
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
 
   const [rotate, setRotate] = useState(false);
 
   const handleImageClick = () => {
-    setRotate(true); 
-    setTimeout(() => {
-      setRotate(false);
-    }, 2000);  
+    setRotate(!rotate); 
+    // setTimeout(() => {
+    //   setRotate(false);
+    // }, 2000);  
   };
+
+
   return (
     <section
       id="home"
@@ -87,7 +93,7 @@ const Landing = ({ setSelectedPage }) => {
             </span>
           </p>
 
-          <p className="mt-10 mb-7 text-sm text-center md:text-start">
+          <p className="mt-10 mb-7  text-center md:text-start text-m">
             Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
             viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
           </p>
@@ -138,6 +144,7 @@ const Landing = ({ setSelectedPage }) => {
         
 
         <motion.div
+          onClick={handleChangeTheme}
           className="flex mt-8 justify-center md:justify-start"
           initial="hidden"
           whileInView="visible"
@@ -148,15 +155,12 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-        <div className='flex align-middle' onClick={handleImageClick}>
+        <div className='flex items-center' onClick={handleImageClick } >
           
         <motion.img
        variants ={{
-              hidden: { rotate: 0 },
-              rotate: {
-                rotate: 360,
-                transition: { duration: 1.5 },
-    },}}
+              hidden: { rotate: -360, transition:{duration: 1.5}},
+              rotate: { rotate: 360, transition: { duration: 1.5},},}}
                   initial="hidden"
                   animate={rotate ? "rotate": "hidden"}
                   alt="profile"
@@ -164,7 +168,7 @@ const Landing = ({ setSelectedPage }) => {
                   src="assets/color-wheel.png"
     />
         
-       <p >Click here to change the color theme </p></div>
+       <p className='pl-3 text-xl'>Click here to change the color theme </p></div>
         </motion.div>
       </div>
     </section>

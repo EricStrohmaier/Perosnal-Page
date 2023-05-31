@@ -111,7 +111,7 @@ const MySkills = () => {
           <p className="tracking-wider font-oswald font-semibold text-4xl mt-10 mb-10">SKILL  
           <span className={`${textColorAccent}`}> LIBRARY</span>
           </p>
-          <div className="flex flex-wrap w-full mx-auto text-xl">
+          <div className="flex flex-wrap w-full mx-auto text-xl text-center">
           <div className="m-2 mb-10">
           <p>From pure curiosity in the world,<span className="font-bold text-3xl"> how</span>  and <span className="font-bold text-3xl"> why</span> things are working like they do, I found creative freedom and passion in what I do. </p>  
           </div>

@@ -18,7 +18,7 @@ const Contact = () => {
     }
   };
 
-  const { textColorSecondary,primary,textColorAccent,secondary ,primaryColorText , hoverPrimaryColor}= ColorStyles();
+  const { textColorSecondary,hoverPrimaryColor,textColorAccent,secondary , }= ColorStyles();
   return (
     <section id="contact" className="contact py-24">
       {/* HEADINGS */}
@@ -35,7 +35,8 @@ const Contact = () => {
       >
         <div>
           <p className="font-oswald font-semibold text-4xl">
-            <span className={`${textColorSecondary}`}>CONTACT ME</span> TO GET STARTED
+          CONTACT ME {""}
+            <span className={`${textColorSecondary}`}>TO GET STARTED </span> 
           </p>
           <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />

@@ -1,4 +1,3 @@
-import React from 'react';
 import useColorTheme from './ColorTheme';
 
 const ColorStyles = () => {
@@ -111,8 +110,8 @@ const ColorStyles = () => {
     theme8: 'hover:bg-theme8-primary ',
     // Add more color variants for each theme
   };
+  const {colorTheme, handleChangeTheme}  = useColorTheme();
 
-  const colorTheme = useColorTheme();
   const themeName = colorTheme.name;
   const appClass = colorVariants[themeName];
   const accent = backgroundAccent[themeName];
@@ -125,7 +124,7 @@ const ColorStyles = () => {
   const primaryColorText =textColorPrimary[themeName]
   const hoverPrimaryColor = hoverBgPrimary[themeName];
 
-  return { accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor };
+  return { accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor, handleChangeTheme };
 };
 
 export default ColorStyles;
