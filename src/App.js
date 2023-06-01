@@ -14,7 +14,7 @@ import animationData from "../src/assets/18123-developer.json"
 
 function App() {
   // Initialize all the colors and change them on Click
-  const {fromColor,toColor, appClass,accent,primary,secondary,boderPrimary,textColorAccent,placeholderText,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
+  const {fromColor,viaAccent,toColor,toBackground,fromBackground, appClass,accent,primary,secondary,boderPrimary,textColorAccent,placeholderText,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
 
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -454,10 +454,10 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
          <div className={`w-1/4 h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
          <button onClick={handleChangeTheme} className= {`${secondary} hover:scale-100  hover:border-white rounded-lg flex justify-center items-center p-2`}>Change Theme manually</button>
          </div>
-         <div className="w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center ">
-            <div className="font-semibold text-3xl m-6 flex justify-center items-center">
+         <div className={`w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-l ${fromBackground} ${viaAccent} ${toBackground}`}>
+            <div className={`font-semibold text-3xl m-6 flex justify-center items-center `} >
               <div className="text-center">
-                The <span className={`font-extrabold bg-gradient-to-r ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
+                The <span className={`font-extrabold bg-gradient-to-r  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
                 <p className="text-xl pt-6">I choose bright themes for the day and dark themes for night.</p>
               </div>
             </div>

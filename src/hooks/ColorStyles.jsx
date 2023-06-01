@@ -142,6 +142,39 @@ const ColorStyles = () => {
     theme8: 'to-theme8-secondary ',
     // Add more color variants for each theme
   };
+  const linearBackground = {
+    theme1: 'from-theme1-background',
+    theme3: 'from-theme2-background  ',
+    theme2: 'from-theme3-background ',
+    theme4: 'from-theme4-background ',
+    theme5: 'from-theme5-background ',
+    theme6: 'from-theme6-background ',
+    theme7: 'from-theme7-background ',
+    theme8: 'from-theme8-background ',
+    // Add more color variants for each theme
+  };
+  const linearBackgroundSecond = {
+    theme1: 'to-theme1-background',
+    theme3: 'to-theme2-background  ',
+    theme2: 'to-theme3-background ',
+    theme4: 'to-theme4-background ',
+    theme5: 'to-theme5-background ',
+    theme6: 'to-theme6-background ',
+    theme7: 'to-theme7-background ',
+    theme8: 'to-theme8-background ',
+    // Add more color variants for each theme
+  };
+  const linearViaBackground = {
+    theme1: 'via-theme1-primary',
+    theme3: 'via-theme2-primary  ',
+    theme2: 'via-theme3-primary ',
+    theme4: 'via-theme4-primary ',
+    theme5: 'via-theme5-primary ',
+    theme6: 'via-theme6-primary ',
+    theme7: 'via-theme7-primary ',
+    theme8: 'via-theme8-primary ',
+    // Add more color variants for each theme
+  };
   const {colorTheme, handleChangeTheme}  = useColorTheme();
 
   const themeName = colorTheme.name;
@@ -158,8 +191,11 @@ const ColorStyles = () => {
   const placeholderText = placeholderColorText[themeName];
   const toColor = linearFirstColor[themeName];
   const fromColor = linearSecondColor[themeName];
+  const fromBackground = linearBackground[themeName];
+  const toBackground = linearBackgroundSecond[themeName];
+  const viaAccent = linearViaBackground[themeName];
 
-  return {placeholderText,toColor,fromColor, accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor, handleChangeTheme };
+  return {viaAccent,toBackground,fromBackground,placeholderText,toColor,fromColor, accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor, handleChangeTheme };
 };
 
 export default ColorStyles;
