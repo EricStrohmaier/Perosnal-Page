@@ -473,8 +473,9 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/el/paguco"
+            action="https://formsubmit.co/el/eric.strohmaier00@gmail.com "
             method="POST"
+            
           >
             <input
               className={`w-full ${secondary}  font-semibold ${placeholderText} p-3`}
@@ -496,6 +497,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
               className={`w-full ${secondary} font-semibold ${placeholderText} p-3 mt-5`}
               type="email"
               placeholder="EMAIL"
+           
               {...register("email", {
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
