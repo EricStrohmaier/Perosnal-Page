@@ -110,6 +110,16 @@ const ColorStyles = () => {
     theme8: 'hover:bg-theme8-primary ',
     // Add more color variants for each theme
   };
+  const placeholderColorText = {
+    theme1: 'placeholder-theme1-textColor',
+    theme3: 'placeholder-theme2-textColor  ',
+    theme2: 'placeholder-theme3-textColor ',
+    theme4: 'placeholder-theme4-textColor ',
+    theme5: 'placeholder-theme5-textColor ',
+    theme6: 'placeholder-theme6-textColor ',
+    theme7: 'placeholder-theme7-textColor ',
+    theme8: 'placeholder-theme8-textColor ',
+  };
   const {colorTheme, handleChangeTheme}  = useColorTheme();
 
   const themeName = colorTheme.name;
@@ -123,8 +133,9 @@ const ColorStyles = () => {
   const colorText = textColor[themeName];
   const primaryColorText =textColorPrimary[themeName]
   const hoverPrimaryColor = hoverBgPrimary[themeName];
+  const placeholderText = placeholderColorText[themeName];
 
-  return { accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor, handleChangeTheme };
+  return {placeholderText, accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor, handleChangeTheme };
 };
 
 export default ColorStyles;

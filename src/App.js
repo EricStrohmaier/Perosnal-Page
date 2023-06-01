@@ -15,7 +15,7 @@ import animationData from "../src/assets/18123-developer.json"
 
 function App() {
   // Initialize all the colors and change them on Click
-  const {appClass,accent,primary,secondary,boderPrimary,textColorAccent,textColorSecondary,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
+  const {appClass,accent,primary,secondary,boderPrimary,textColorAccent,placeholderText,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
 
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -435,7 +435,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         <div>
           <p className="font-oswald font-semibold text-4xl">
           CONTACT ME {""}
-            <span className={`${textColorSecondary}`}>TO GET STARTED </span> 
+            {/* <span className={`${textColorSecondary}`}> </span>  */}
           </p>
           <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />
@@ -473,11 +473,11 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/el/kixopi"
+            action="https://formsubmit.co/el/paguco"
             method="POST"
           >
             <input
-              className={`w-full ${secondary} font-semibold placeholder-primary-text p-3`}
+              className={`w-full ${secondary}  font-semibold ${placeholderText} p-3`}
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -493,7 +493,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             )}
 
             <input
-              className={`w-full ${secondary} font-semibold placeholder-primary-text p-3 mt-5`}
+              className={`w-full ${secondary} font-semibold ${placeholderText} p-3 mt-5`}
               type="email"
               placeholder="EMAIL"
               {...register("email", {
@@ -509,7 +509,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             )}
 
             <textarea
-              className={`w-full ${secondary} font-semibold placeholder-primary-text p-3 mt-5`}
+              className={`w-full ${secondary} font-semibold ${placeholderText} p-3 mt-5`}
               name="message"
               placeholder="MESSAGE"
               rows="4"
