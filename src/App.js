@@ -473,7 +473,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/el/9df944b5a4bcf29a0124b16fe3d9d4b6"
+            action="https://formsubmit.co/9df944b5a4bcf29a0124b16fe3d9d4b6"
             method="POST"
             
           >
