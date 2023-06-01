@@ -1,8 +1,11 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 
 const Projects = () => {
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
   return (
     <section id="projects" className="pt-16 pb-24  ">
       {/* HEADINGS */}
@@ -28,7 +31,8 @@ const Projects = () => {
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex flex-wrap  w-full">
+      {isDesktop ? (
+        <div className="flex flex-wrap  w-full">
      
          <div className="w-2/3 h-80 m-1 border-solid border-2"></div>
          <div className="w-1/4 h-80 m-1 border-solid border-2 "></div>
@@ -36,6 +40,16 @@ const Projects = () => {
          <div className="w-2/3 h-80 m-1 border-solid border-2 "></div>
       
       </div>
+      ) : (
+    <div className="flex flex-wrap  w-full">
+     
+     <div className="w-full h-80 m-1 border-solid border-2"></div>
+     <div className="w-1/3 h-80 m-1 border-solid border-2 "></div>
+     <div className="w-1/3 h-80 m-1 border-solid border-2 "></div>
+     <div className="w-full h-80 m-1 border-solid border-2 "></div>
+  
+  </div>)}
+      
     </section>
   );
 };
