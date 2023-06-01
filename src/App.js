@@ -14,7 +14,7 @@ import animationData from "../src/assets/18123-developer.json"
 
 function App() {
   // Initialize all the colors and change them on Click
-  const {fromColor,toColor, colorText, appClass,accent,primary,secondary,boderPrimary,textColorAccent,placeholderText,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
+  const {fromColor,toColor, appClass,accent,primary,secondary,boderPrimary,textColorAccent,placeholderText,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
 
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
