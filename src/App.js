@@ -1,6 +1,5 @@
 import Navbar from "./scenes/Navbar";
 import LineGradient from "./components/LineGradient";
-import Projects from "./scenes/Projects";
 import useMediaQuery from "./hooks/useMediaQuery";
 import React,{ useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -15,7 +14,7 @@ import animationData from "../src/assets/18123-developer.json"
 
 function App() {
   // Initialize all the colors and change them on Click
-  const {appClass,accent,primary,secondary,boderPrimary,textColorAccent,placeholderText,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
+  const {fromColor,toColor, colorText, appClass,accent,primary,secondary,boderPrimary,textColorAccent,placeholderText,hoverPrimaryColor, handleChangeTheme} = ColorStyles();
 
   const [selectedPage, setSelectedPage] = useState("home");
   const [isTopOfPage, setIsTopOfPage] = useState(true);
@@ -405,7 +404,82 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           amount="all"
           onViewportEnter={() => setSelectedPage("projects")}
         > 
-          <Projects />
+             <section id="projects" className="pt-16 pb-24  ">
+      {/* HEADINGS */}
+      <motion.div
+        className="md:w-2/5  "
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: { opacity: 1, y: 0 },
+        }}
+      >
+        <div>
+          <p className="font-oswald font-semibold text-4xl m-3">
+           <span className="text-primary-text"> PROJECTS </span> 
+          </p>
+          <div className="flex mt-5">
+            <LineGradient width="w-2/3" />
+          </div>
+        </div>
+      </motion.div>
+
+      {/* PROJECTS */}
+      {isDesktop ? (
+        <div className="flex flex-wrap  w-full ">
+     
+         <div className="w-2/3 h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
+         <video controls  loop autoPlay muted>
+         <source src={("src/assets/RecipeWebScraperApp.mp4")} type="video/mp4"/> 
+         </video> </div>
+         <div className={`w-1/4 h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`} >
+         <h2 className="font-bold text-3xl pb-3 ">Recipe-Web-Scraper</h2>
+          <p className=" text-lg">This App Scrapes all the recipes from the blog <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all"  rel="noreferrer" target="_blank" > Pinchofyum</a>.<br/>
+           I build a simple interface where you can query through  the data with different filters.<br/>
+           This was a fun personal project where I learnt a lot about Node.js and EJS <br/>
+           </p>
+           <div className="flex justify-center align-baseline bg-white px-3 p-2 mt-3 rounded-lg w-fit font-bold">
+            <a className="hover:opacity-50 transition duration-500 flex text-black bg-white"
+        href="https://github.com/EricStrohmaier/RecipeApp-"
+        target="_blank"
+        rel="noreferrer"
+      ><p className={`text-black`}>Code Here</p>
+        <img className="ml-2" alt="github-link" src="../assets/icons/github.png" />
+      </a></div>
+          
+         </div>
+         <div className={`w-1/4 h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
+         <button onClick={handleChangeTheme} className= {`${secondary} hover:scale-100  hover:border-white rounded-lg flex justify-center items-center p-2`}>Change Theme manually</button>
+         </div>
+         <div className="w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center ">
+            <div className="font-semibold text-3xl m-6 flex justify-center items-center">
+              <div className="text-center">
+                The <span className={`font-extrabold bg-gradient-to-r ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
+                <p className="text-xl pt-6">I choose bright themes for the day and dark themes for night.</p>
+              </div>
+            </div>
+          </div>
+
+      
+      </div>
+      ) : (
+    <div className="flex flex-wrap  w-full">
+     
+     <div className="w-full h-80 m-1 border-solid border-2"> 
+
+     <video  loop autoPlay muted>
+         <source src={require("./RecipeWebScraperApp.mp4")} type="video/mp4"/> 
+         </video> </div>
+     <div className="w-1/3 h-80 m-1 border-solid border-2 "></div>
+     <div className="w-1/3 h-80 m-1 border-solid border-2 "></div>
+     <div className="w-full h-80 m-1 border-solid border-2 "></div>
+  
+  </div>)}
+      
+    </section>
        </motion.div> 
       </div>
    
@@ -478,7 +552,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             
           >
             <input
-              className={`w-full ${secondary}  font-semibold ${placeholderText} p-3`}
+              className={`w-full rounded-lg ${secondary}  font-semibold ${placeholderText} p-3`}
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -494,7 +568,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             )}
 
             <input
-              className={`w-full ${secondary} font-semibold ${placeholderText} p-3 mt-5`}
+              className={`w-full rounded-lg ${secondary} font-semibold ${placeholderText} p-3 mt-5`}
               type="email"
               placeholder="EMAIL"
            
@@ -511,7 +585,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             )}
 
             <textarea
-              className={`w-full ${secondary} font-semibold ${placeholderText} p-3 mt-5`}
+              className={`w-full rounded-lg ${secondary} font-semibold ${placeholderText} p-3 mt-5`}
               name="message"
               placeholder="MESSAGE"
               rows="4"
@@ -531,7 +605,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             )}
 
             <button
-              className={`p-5 ${secondary} font-semibold  mt-5  ${hoverPrimaryColor} transition duration-500`}
+              className={`p-5 ${secondary} rounded-lg font-semibold  mt-5  ${hoverPrimaryColor} transition duration-500`}
               type="submit"
             >
               SEND ME A MESSAGE

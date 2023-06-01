@@ -64,8 +64,7 @@ module.exports = {
         },
       },
       backgroundImage: (theme) => ({
-        "gradient-rainbow":
-        "linear-gradient(to left, #505baf,  #92f2aa )",
+      
 
         "gradient-rainblue":
           "linear-gradient(to right, #505baf,  #92f2aa )",

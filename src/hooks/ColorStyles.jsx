@@ -120,6 +120,28 @@ const ColorStyles = () => {
     theme7: 'placeholder-theme7-textColor ',
     theme8: 'placeholder-theme8-textColor ',
   };
+  const linearFirstColor = {
+    theme1: 'from-theme1-accent',
+    theme3: 'from-theme2-accent  ',
+    theme2: 'from-theme3-accent ',
+    theme4: 'from-theme4-accent ',
+    theme5: 'from-theme5-accent ',
+    theme6: 'from-theme6-accent ',
+    theme7: 'from-theme7-accent ',
+    theme8: 'from-theme8-accent ',
+    // Add more color variants for each theme
+  };
+  const linearSecondColor = {
+    theme1: 'to-theme1-secondary',
+    theme3: 'to-theme2-secondary  ',
+    theme2: 'to-theme3-secondary ',
+    theme4: 'to-theme4-secondary ',
+    theme5: 'to-theme5-secondary ',
+    theme6: 'to-theme6-secondary ',
+    theme7: 'to-theme7-secondary ',
+    theme8: 'to-theme8-secondary ',
+    // Add more color variants for each theme
+  };
   const {colorTheme, handleChangeTheme}  = useColorTheme();
 
   const themeName = colorTheme.name;
@@ -134,8 +156,10 @@ const ColorStyles = () => {
   const primaryColorText =textColorPrimary[themeName]
   const hoverPrimaryColor = hoverBgPrimary[themeName];
   const placeholderText = placeholderColorText[themeName];
+  const toColor = linearFirstColor[themeName];
+  const fromColor = linearSecondColor[themeName];
 
-  return {placeholderText, accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor, handleChangeTheme };
+  return {placeholderText,toColor,fromColor, accent, primary, secondary, appClass, textColorAccent,textColorSecondary, boderPrimary, colorText,primaryColorText ,hoverPrimaryColor, handleChangeTheme };
 };
 
 export default ColorStyles;
