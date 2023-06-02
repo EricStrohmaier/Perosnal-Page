@@ -10,12 +10,13 @@ body,
 #root,
 .app {
   height: 100%;
-  
-  
 }
 .glass {
   background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.897), rgba(255, 255, 255, 0.537));
 }
 .glass2 {
   background: linear-gradient(to bottom left, rgba(255, 255, 255, 0.664), rgba(255, 255, 255, 0.537));
+}
+.transBg{
+  background:  rgba(255, 255, 255, 0.897);
 }

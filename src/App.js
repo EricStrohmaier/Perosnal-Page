@@ -9,6 +9,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../src/components/SocialMediaIcons";
 import Lottie from "lottie-react"
 import animationData from "../src/assets/18123-developer.json"
+import bnkr  from "./assets/moblie-bnkr.png"
 
 
 
@@ -20,6 +21,8 @@ function App() {
   const [isTopOfPage, setIsTopOfPage] = useState(true);
   const isDesktop = useMediaQuery("(min-width: 1060px)");
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+ 
+
   const [firstHovered, setFirstHovered] = useState(false);
   const [secondHoverd, setSecondHovered] = useState(false);
 
@@ -76,6 +79,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         selectedPage={selectedPage}
         setSelectedPage={setSelectedPage}
       />
+      <div className=" xl:px-32">
       <div className="w-5/6 mx-auto md:h-full ">
         {isDesktop && (
           <div className="flex flex-col gap-6 fixed top-[60%] right-7">
@@ -240,7 +244,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             visible: { opacity: 1, x: 0 },
           }}
         >
-        <div className='flex items-center' onClick={handleImageClick } >
+        <button className='flex items-center' onClick={handleImageClick } >
           
         <motion.img
        variants ={{
@@ -253,7 +257,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
                   src="assets/color-wheel.png"
     />
         
-       <p className='pl-3 text-xl font-semibold'>Click here to change the color theme </p></div>
+       <p className='pl-3 text-xl font-semibold'>Click here to change the color theme </p></button>
         </motion.div>
       </div>
     </section>
@@ -282,7 +286,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           }}
         >
         {isAboveLarge ? (
-          <div className=" mx-32 "> 
+          <div className=" mx-4 "> 
           <div className="flex flex-col items-center"> 
           <p className="tracking-wider font-oswald font-semibold text-4xl mt-10 mb-10">SKILL  
           <span className={`${textColorAccent}`}> LIBRARY</span>
@@ -290,10 +294,10 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           </div>
           {/* text stactic and flying in on hover  */}
 
-        <div className="flex flex-wrap w-full relative ">
+        <div className="flex flex-wrap w-full  relative ">
           {/* Book shelfs to the left  animate seperat?*/}
           <div
-        className="relative w-2/3 max-w-[200px] md:max-w-[350px] flex float-left"
+        className="relative w-2/3 max-w-[200px] md:max-w-[350px] flex "
         onMouseEnter={() => setFirstHovered(true)}
         onMouseLeave={() => setFirstHovered(false)}
       >
@@ -314,8 +318,9 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             <p className={`mb-10 font-bold ${textColorAccent} `}>Hover the book shelfs to find out more...</p>
           <p >From pure curiosity in the world,<span className="font-bold text-3xl"> how</span>  and <span className="font-bold text-3xl"> why</span> things are working like they do, I found creative freedom and passion in what I do. </p>  
         </div>
+        
       <div
-        className={`text-2xl absolute mt-20  text-right right-44 opacity-0 transition-opacity duration-200 ${
+        className={`text-2xl absolute mt-20  text-right right-1/2  opacity-0 transition-opacity duration-200 ${
           firstHovered ? 'opacity-100' : ''
         }`}
       >
@@ -350,7 +355,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
       </div>
 
       <div
-        className={`text-2xl absolute  text-right  right-44 opacity-0 transition-opacity duration-200 ${
+        className={`text-2xl absolute  text-right  right-1/2 opacity-0 transition-opacity duration-200 ${
           secondHoverd ? 'opacity-100' : ''
         }`}
       >
@@ -421,7 +426,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           <p className="font-oswald font-semibold text-4xl m-3">
            <span className="text-primary-text"> PROJECTS </span> 
           </p>
-          <div className="flex mt-5">
+          <div className="flex my-5">
             <LineGradient width="w-2/3" />
           </div>
         </div>
@@ -432,14 +437,17 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         <div className="flex flex-wrap  w-full ">
      
          <div className="w-2/3 h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
-         <video controls  loop autoPlay muted>
-         <source src={("src/assets/RecipeWebScraperApp.mp4")} type="video/mp4"/> 
+         <video autoPlay loop controls  muted>
+         <source src={("src/assets/RecipeWebScraperApp.mp4")}  type="video/mp4"/> 
          </video> </div>
          <div className={`w-1/4 h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`} >
-         <h2 className="font-bold text-3xl pb-3 ">Recipe-Web-Scraper</h2>
-          <p className=" text-lg">This App Scrapes all the recipes from the blog <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all"  rel="noreferrer" target="_blank" > Pinchofyum</a>.<br/>
-           I build a simple interface where you can query through  the data with different filters.<br/>
-           This was a fun personal project where I learnt a lot about Node.js and EJS <br/>
+         <h2 className="font-bold text-3xl pb-3 ">Recipe-Scraper</h2>
+          <p className=" text-lg">
+           I build a simple App interface where you can query through the recipes form the blog <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all"  rel="noreferrer" target="_blank" > Pinchofyum</a>.
+          <br/>
+           You can use different filters and get some random recipe ideas.
+          <br/>
+           This was a fun personal project where I used Node.js for the Web Scraping part, MongoDB for storing and accessing data and EJS to display the results. <br/>
            </p>
            <div className="flex justify-center align-baseline bg-white px-3 p-2 mt-3 rounded-lg w-fit font-bold">
             <a className="hover:opacity-50 transition duration-500 flex text-black bg-white"
@@ -452,33 +460,81 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           
          </div>
          <div className={`w-1/4 h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
-         <button onClick={handleChangeTheme} className= {`${secondary} hover:scale-100  hover:border-white rounded-lg flex justify-center items-center p-2`}>Change Theme manually</button>
+         <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>Change Theme manually</button>
          </div>
-         <div className={`w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-l ${fromBackground} ${viaAccent} ${toBackground}`}>
+         <div className={`w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-l ${fromBackground} ${viaAccent} ${toBackground} `}>
             <div className={`font-semibold text-3xl m-6 flex justify-center items-center `} >
               <div className="text-center">
-                The <span className={`font-extrabold bg-gradient-to-r  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
+                The <span className={`font-extrabold  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] bg-gradient-to-r  ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
                 <p className="text-xl pt-6">I choose bright themes for the day and dark themes for night.</p>
               </div>
             </div>
           </div>
-
-      
+          <div className="w-2/3 h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden">
+            <div > 
+           
+            </div>
+          </div>
+          <div className="w-1/4 h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
+          <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10">
+            <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
+              <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
+            </a>
+            <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group">
+            <button className="pb-3">{`This is a functional landing page using plain HTML, CSS and JavaScript for a night club.`}</button>
+          </div>
+          </div>
+</div>
       </div>
       ) : (
-    <div className="flex flex-wrap  w-full">
+   <div className="flex flex-wrap  w-full ">
      
-     <div className="w-full h-80 m-1 border-solid border-2"> 
-
-     <video  loop autoPlay muted>
-         <source src={require("./RecipeWebScraperApp.mp4")} type="video/mp4"/> 
-         </video> </div>
-     <div className="w-1/3 h-80 m-1 border-solid border-2 "></div>
-     <div className="w-1/3 h-80 m-1 border-solid border-2 "></div>
-     <div className="w-full h-80 m-1 border-solid border-2 "></div>
-  
-  </div>)}
+  <div className="w-full h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
+     <video controls loop autoPlay muted>
+     <source src={("src/assets/videoApp.mp4")} type="video/mp4"/> 
+     </video> </div>
+     <div className={`w-full h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`} >
+     <h2 className="font-bold text-3xl pb-3 ">Recipe-Web-Scraper</h2>
+      <p className=" text-lg">This App Scrapes all the recipes from the blog <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all"  rel="noreferrer" target="_blank" > Pinchofyum</a>.<br/>
+       I build a simple interface where you can query through  the data with different filters.<br/>
+       This was a fun personal project where I learnt a lot about Node.js and EJS <br/>
+       </p>
+       <div className="flex justify-center align-baseline bg-white px-3 p-2 mt-3 rounded-lg w-fit font-bold">
+        <a className="hover:opacity-50 transition duration-500 flex text-black bg-white"
+    href="https://github.com/EricStrohmaier/RecipeApp-"
+    target="_blank"
+    rel="noreferrer"
+  ><p className={`text-black`}>Code Here</p>
+    <img className="ml-2" alt="github-link" src="../assets/icons/github.png" />
+  </a></div>
       
+     </div>
+     <div className={`w-full h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
+     <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>Change Theme manually</button>
+     </div>
+     <div className={`w-full h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-t ${fromBackground} ${viaAccent} ${toBackground} `}>
+        <div className={`font-semibold text-3xl m-6 flex justify-center items-center `} >
+          <div className="text-center pt-5">
+            The <span className={`font-extrabold bg-gradient-to-r  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
+            <p className="text-xl py-5">I choose bright themes for the day and dark themes for night.</p>
+          </div>
+        </div>
+      </div> 
+      <div className="w-full h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden">
+
+          </div>
+          <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
+          <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10">
+            <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
+              <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
+            </a>
+            <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group">
+            <button className="px-3 pb-4">{`This is a functional landing page using plain HTML, CSS and JavaScript for a night club.`}</button>
+          </div>
+          </div>
+  </div>
+  </div>
+  )}
     </section>
        </motion.div> 
       </div>
@@ -617,6 +673,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         </motion.div>
       </div>
       {isDesktop &&(<div className="w-1 h-24"></div>)}
+      </div>
       <footer className={`h-28 ${primary}  pt-10`}>
       <div className="w-10/12 mx-auto">
       
@@ -632,6 +689,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
       </div>
     </footer>
     </div>
+  
   );
 }
 
