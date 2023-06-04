@@ -11,7 +11,7 @@ import Lottie from "lottie-react"
 import animationData from "../src/assets/18123-developer.json"
 import bnkr  from "./assets/moblie-bnkr.png"
 import recipeScraper from "./assets/recipe-scraper.png"
-
+import resume from "./assets/Resume Eric Strohmaier.pdf"
 
 
 function App() {
@@ -183,9 +183,9 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             </span>
           </p>
 
-          <p className="mt-10 mb-7  text-center md:text-start text-m">
-            Adipiscing arcu, in aliquam fringilla cursus. Elit arcu elementum
-            viverra malesuada sem ac faucibus dolor. Sagittis scelerisque.
+          <p className="mt-10 mb-7  text-center md:text-start text-lg">
+      
+I am a motivated and curious Front End Developer thriving on challenges and am always eager to learn new technologies.
           </p>
         </motion.div>
        
@@ -221,11 +221,11 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         <div className="w-3 h-1"></div>
           <a
             className={`rounded-lg  hover:-translate-y-1  transition duration-200 ${secondary} p-0.5 z-10`} 
-            href={`${bnkr}`}
-            download
+            href={`${resume}`}
+            target="_blank" rel="noreferrer"
           >
             <div className="   w-full h-full flex items-center justify-center px-10 font-oswald">
-              Download CV
+              Open Resume/CV
             </div>
           </a>
         </motion.div>
@@ -522,8 +522,9 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           </div>
         </div>
       </div> 
-      <div className="w-full h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium "> Constantly working on  Projects   will be continued... </div>
-          <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
+      <div className="w-full h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium "> Constantly working on  Projects   will be continued... 
+      </div> 
+       <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
           <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10 overflow-hidden">
             <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
               <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
