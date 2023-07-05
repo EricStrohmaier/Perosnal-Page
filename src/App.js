@@ -10,8 +10,8 @@ import SocialMediaIcons from "../src/components/SocialMediaIcons";
 import Lottie from "lottie-react"
 import animationData from "../src/assets/18123-developer.json"
 import bnkr  from "./assets/moblie-bnkr.png"
-import recipeScraper from "./assets/recipe-scraper.png"
-import resume from "./assets/Resume Eric Strohmaier.pdf"
+import recipeScraper from "./assets/recipe-scraper.jpg"
+import resume from "./assets/Resume.pdf"
 
 
 function App() {
@@ -38,6 +38,7 @@ function App() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   //Laning page
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
@@ -48,7 +49,8 @@ function App() {
   const [rotate, setRotate] = useState(false);
 
   const handleImageClick = () => {
-    setRotate(!rotate) };
+    setRotate(!rotate)
+   };
 
 //DOTs 
 
@@ -230,7 +232,7 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
           </a>
         </motion.div>
    
-        <motion.div
+        {/* <motion.div
           onClick={handleChangeTheme}
           className="flex mt-8 justify-center md:justify-start"
           initial="hidden"
@@ -256,7 +258,7 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
     />
         
        <p className='pl-3 text-xl font-semibold'>Click here to change the color theme </p></button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
         </motion.div>
@@ -361,6 +363,7 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
             <p> Node.js</p>
             <p> Express</p>
             <p> MongoDB</p> 
+            <p> Supabase</p>
           </div>
         </div>  
         </div>
@@ -386,7 +389,8 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
         <p className={`text-blue-500  font-bold  underline underline-offset-2`}>Back-End</p>
             <p> Node.js</p>
             <p> Express</p>
-            <p> MongoDB</p> 
+            <p> MongoDB</p>
+            <p> Supabase</p> 
         </div>
    
   
@@ -462,18 +466,32 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
           
          </div>
          <div className={`w-1/4 h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
-         <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>Change Theme manually</button>
+         <div onClick={handleImageClick } >
+         <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>
+         <motion.img
+            variants ={{
+                    hidden: { rotate: -360, transition:{duration: 1.5}},
+                    rotate: { rotate: 360, transition: { duration: 1.5},},}}
+                        initial="hidden"
+                        animate={rotate ? "rotate": "hidden"}
+                        alt="profile"
+                        className="spin-image"
+                        src="assets/color-wheel.png"
+    />
+         Change Theme manually
+         </button>
+         </div>
          </div>
          <div className={`w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-l ${fromBackground} ${viaAccent} ${toBackground} `}>
             <div className={`font-semibold text-3xl m-6 flex justify-center items-center `} >
               <div className="text-center">
                 The <span className={`font-extrabold  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] bg-gradient-to-r  ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
-                <p className="text-xl pt-6">I choose bright themes for the day and dark themes for night.</p>
+                <p className="text-xl pt-6">I choose bright colors for the day and dark colors for the night.</p>
               </div>
             </div>
           </div>
           <div className="w-2/3 h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium">
-          Constantly working on  Projects   will be continued...
+          <p className="p-5 flex justify-center items-center leading-10 text-center">One of my next project (currently in production) Called ONE TASK. It is a softwear-tool where I extensefly worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only showes the anserwed questions of this week, you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
           </div>
           <div className="w-1/4 h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
           <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10">
@@ -522,7 +540,9 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
           </div>
         </div>
       </div> 
-      <div className="w-full h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium "> Constantly working on  Projects   will be continued... 
+      <div className="w-full h-fit border-solid border-2 rounded-3xl flex justify-center items-center m-3  text-xl font-medium ">
+      <p className="p-5 flex justify-center items-center leading-10 text-center">One of my next project (currently in production) Called ONE TASK. It is a softwear-tool where I extensefly worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only showes the anserwed questions of this week, you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
+
       </div> 
        <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
           <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10 overflow-hidden">
