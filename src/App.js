@@ -439,7 +439,7 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
         <div className="flex flex-wrap  w-full ">
      
          <div className="w-2/3 h-fit m-3 border-solid border-2 overflow-hidden rounded-3xl">
-         <a title="Click for the Demo" target="_blank" rel="noreferrer" href="https://recipe-scraper.herokuapp.com/"><img src={`${recipeScraper}`} alt="recipe-web-scraper"/> </a> </div>
+         <a title="Click for the Demo" target="_blank" rel="noreferrer" href="https://beautiful-recipe.netlify.app/"><img src={`${recipeScraper}`} alt="recipe-web-scraper"/> </a> </div>
          <div className={`w-1/4 h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`} >
          <h2 className="font-bold text-3xl pb-3 ">Recipe-Scraper</h2>
           <p className=" text-lg">
@@ -447,17 +447,17 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
           <br/>
            You can use different filters and get some random recipe ideas.
           <br/>
-           This was a fun personal project where I used Node.js for the Web Scraping part, MongoDB for storing and accessing data and EJS to display the results. <br/>
+           This was a fun personal project where I used Node.js for the Web Scraping part, Supabase for storing and accessing data, React to display the results and TailwindCSS for styling. <br/>
            </p>
            <div className="flex  justify-start  ">
            <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className=" hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/RecipeApp-" target="_blank" rel="noreferrer">
+            <a className=" hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/UiUxRecipeApp" target="_blank" rel="noreferrer">
               <p className={`text-black`}>Code Here</p>
               <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
             </a>
             </div>
             <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className="hover:opacity-50 transition duration-500" href="https://recipe-scraper.herokuapp.com/" target="_blank" rel="noreferrer">
+            <a className="hover:opacity-50 transition duration-500" href="https://beautiful-recipe.netlify.app/" target="_blank" rel="noreferrer">
               <p className={`text-black`}>Demo Here</p>
             </a>
           </div></div>
@@ -508,29 +508,40 @@ I am a motivated and curious Front End Developer thriving on challenges and am a
    <div className="flex flex-wrap  w-full ">
      
   <div className="w-full h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
-  <a  target="_blank" rel="noreferrer" href="https://recipe-scraper.herokuapp.com/"><img src={`${recipeScraper}`} alt="recipe-web-scraper"/> </a> </div>
+  <a  target="_blank" rel="noreferrer" href="https://beautiful-recipe.netlify.app/"><img src={`${recipeScraper}`} alt="recipe-web-scraper"/> </a> </div>
      <div className={`w-full h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`} >
      <h2 className="font-bold text-3xl pb-3 ">Recipe-Web-Scraper</h2>
       <p className=" text-lg">This App Scrapes all the recipes from the blog <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all"  rel="noreferrer" target="_blank" > Pinchofyum</a>.<br/>
        I build a simple interface where you can query through  the data with different filters.<br/>
-       This was a fun personal project where I learnt a lot about Node.js and EJS <br/>
+       This was a fun personal project where I learnt a lot about Node.js. For the frontend I used React and TailwindCSS <br/>
        </p>
        <div className="flex  justify-start  ">
            <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className=" hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/RecipeApp-" target="_blank" rel="noreferrer">
+            <a className=" hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/UiUxRecipeApp" target="_blank" rel="noreferrer">
               <p className={`text-black`}>Code Here</p>
               <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
             </a>
             </div>
             <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className="hover:opacity-50 transition duration-500" href="https://recipe-scraper.herokuapp.com/" target="_blank" rel="noreferrer">
+            <a className="hover:opacity-50 transition duration-500" href="https://beautiful-recipe.netlify.app/" target="_blank" rel="noreferrer">
               <p className={`text-black`}>Demo Here</p>
             </a>
           </div></div>
       
      </div>
      <div className={`w-full h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
-     <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>Change Theme manually</button>
+     <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>
+     <motion.img
+            variants ={{
+                    hidden: { rotate: -360, transition:{duration: 1.5}},
+                    rotate: { rotate: 360, transition: { duration: 1.5},},}}
+                        initial="hidden"
+                        animate={rotate ? "rotate": "hidden"}
+                        alt="profile"
+                        className="spin-image"
+                        src="assets/color-wheel.png"
+    />Change Theme manually
+    </button>
      </div>
      <div className={`w-full h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-t ${fromBackground} ${viaAccent} ${toBackground} `}>
         <div className={`font-semibold text-3xl m-6 flex justify-center items-center `} >
