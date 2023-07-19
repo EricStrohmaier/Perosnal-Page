@@ -189,8 +189,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
       
           Welcome to my digital playground, where I blend artistic 
           vision with cutting-edge technology to create captivating web experiences.
-          With a keen eye for detail and a passion for innovation, I specialize in transforming 
-          ideas into beautifully crafted websites.
+         
           </p>
         </motion.div>
        
@@ -319,7 +318,8 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
       </div>
       <div className={`text-center flex flex-col absolute w-2/3 transition-opacity duration-600  left-96 top-24 text-2xl ${firstHovered || secondHoverd ? "opacity-0": "opacity-100"}`}>
             <p className={`mb-10 font-bold ${textColorAccent} `}>Hover the book shelfs to find out more...</p>
-          <p >From pure curiosity in the world,<span className="font-bold text-3xl"> how</span>  and <span className="font-bold text-3xl"> why</span> things are working like they do, I found creative freedom and passion in what I do. </p>  
+          <p > With a keen eye for detail and a passion for innovation, I specialize in transforming 
+          ideas into beautifully crafted websites. </p>  
         </div>
         
       <div
@@ -377,7 +377,8 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           </p>
           <div className="flex flex-wrap w-full mx-auto text-xl text-center">
           <div className="m-2 mb-10">
-          <p>From pure curiosity in the world,<span className="font-bold text-3xl"> how</span>  and <span className="font-bold text-3xl"> why</span> things are working like they do, I found creative freedom and passion in what I do. </p>  
+          <p> With a keen eye for detail and a passion for innovation, I specialize in transforming 
+          ideas into beautifully crafted websites.</p>  
           </div>
   
         <div className="w-1/2 text-center  ">
