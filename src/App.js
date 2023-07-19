@@ -187,7 +187,10 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
 
           <p className="mt-10 mb-7  text-center md:text-start text-lg">
       
-I am a motivated and curious Front End Developer thriving on challenges and am always eager to learn new technologies.
+          Welcome to my digital playground, where I blend artistic 
+          vision with cutting-edge technology to create captivating web experiences.
+          With a keen eye for detail and a passion for innovation, I specialize in transforming 
+          ideas into beautifully crafted websites.
           </p>
         </motion.div>
        
