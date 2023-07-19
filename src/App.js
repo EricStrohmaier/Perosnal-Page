@@ -328,12 +328,12 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         }`}
       >
         <p className={`text-yellow-500 font-bold  underline underline-offset-2`} >Front-End</p>
-       
-        <p>JavaScript</p>
-        <p>React</p>
-        <p>HTML</p>
-        <p>CSS</p>
-        <p>jQuery</p>
+        <p>Next.js</p>
+          <p>Typescript</p>
+          <p>JavaScript</p>
+          <p>React</p>
+          <p>HTML</p>
+          <p>Tailwind CSS</p>
       </div>
     </div>
     <div className="flex flex-wrap w-full relative">
