@@ -496,9 +496,16 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
               </div>
             </div>
           </div>
-          <div className="w-2/3 h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium">
-          <p className="p-5 flex justify-center items-center leading-10 text-center">One of my next project (currently in production) Called ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only shows the answered questions of this week, you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
+         
+          <div className="w-2/3 h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium flex-col">
+              <p className="text-2xl font-semibold mx-1 ">Check the demo  <a href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer" className={`uppercase ${primary} p-1 px-3 rounded-2xl `}>out now!</a> </p>
+          <p className="p-5 flex justify-center items-center leading-10 text-center">
+       ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH,
+           DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only shows the answered questions of this week, 
+           you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
+
           </div>
+      
           <div className="w-1/4 h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
           <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10">
             <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
@@ -558,7 +565,11 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         </div>
       </div> 
       <div className="w-full h-fit border-solid border-2 rounded-3xl flex justify-center items-center m-3  text-xl font-medium ">
-      <p className="p-5 flex justify-center items-center leading-10 text-center">One of my next project (currently in production) Called ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only shows the answered questions of this week, you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
+      <p className="text-2xl font-semibold mx-1 ">Check the demo  <a href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer" className={`uppercase ${primary} p-1 px-3 rounded-2xl `}>out now!</a> </p>
+          <p className="p-5 flex justify-center items-center leading-10 text-center">
+       ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH,
+           DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only shows the answered questions of this week, 
+           you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
 
       </div> 
        <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
