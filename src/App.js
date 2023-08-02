@@ -12,6 +12,8 @@ import animationData from "../src/assets/18123-developer.json"
 import bnkr  from "./assets/moblie-bnkr.png"
 import recipeScraper from "./assets/recipe-scraper.jpg"
 import resume from "./assets/Resume.pdf"
+import oneTask from "./assets/onetaskapp.png"
+import ecommerce from "./assets/ecommerceshop.png"
 
 
 function App() {
@@ -440,148 +442,280 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         </div>
       </motion.div>
 
+
+
       {/* PROJECTS */}
+
+
+
       {isDesktop ? (
-        <div className="flex flex-wrap  w-full ">
-     
-         <div className="w-2/3 h-fit m-3 border-solid border-2 overflow-hidden rounded-3xl">
-         <a title="Click for the Demo" target="_blank" rel="noreferrer" href="https://beautiful-recipe.netlify.app/"><img src={`${recipeScraper}`} alt="recipe-web-scraper"/> </a> </div>
-         <div className={`w-1/4 h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`} >
-         <h2 className="font-bold text-3xl pb-3 ">Recipe-Scraper</h2>
-          <p className=" text-lg">
-           I build a simple App interface where you can query through the recipes form the blog <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all"  rel="noreferrer" target="_blank" > Pinchofyum</a>.
-          <br/>
-           You can use different filters and get some random recipe ideas.
-          <br/>
-           This was a fun personal project where I used Node.js for the Web Scraping part, Supabase for storing and accessing data, React to display the results and TailwindCSS for styling. <br/>
-           </p>
-           <div className="flex  justify-start  ">
-           <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className=" hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/UiUxRecipeApp" target="_blank" rel="noreferrer">
-              <p className={`text-black`}>Code Here</p>
-              <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
+        <div className="flex flex-wrap w-full">
+          <div className="w-2/3 h-fit  border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium flex-col">
+          <a title="Click for the Demo" target="_blank" rel="noreferrer" href="https://onetask-app.vercel.app/">
+              <img src={`${oneTask}`} alt="onetask application" />
             </a>
+          </div>
+
+          <div className={`w-1/4 h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`}>
+            <h2 className="font-bold text-3xl pb-3">OneTask</h2>
+            <p className="text-lg">
+              ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that
+              the user gets daily questions asked which get saved in a DB. The dashboard only shows the answered questions of this week, you can edit the answers and check them.
+              <br />
+              Techstack: Next.js, TypeScript, TailwindCSS, etc.
+            </p>
+
+            <div className="flex justify-start">
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500 flex  bg-gray-300" href="https://github.com/EricStrohmaier/onetask-app" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Code Here</p>
+                  <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
+                </a>
+              </div>
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500" href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Demo Here</p>
+                </a>
+              </div>
             </div>
-            <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className="hover:opacity-50 transition duration-500" href="https://beautiful-recipe.netlify.app/" target="_blank" rel="noreferrer">
-              <p className={`text-black`}>Demo Here</p>
-            </a>
-          </div></div>
+          </div>
 
+          <div className={`w-1/4 h-80 m-3  border-solid border-2 rounded-3xl ${accent} flex justify-center items-center`}>
+            <div onClick={handleImageClick}>
+              <button onClick={handleChangeTheme} className={`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>
+                <motion.img
+                  variants={{
+                    hidden: { rotate: -360, transition: { duration: 1.5 } },
+                    rotate: { rotate: 360, transition: { duration: 1.5 } },
+                  }}
+                  initial="hidden"
+                  animate={rotate ? "rotate" : "hidden"}
+                  alt="profile"
+                  className="spin-image"
+                  src="assets/color-wheel.png"
+                />
+                Change Theme manually
+              </button>
+            </div>
+          </div>
 
-          
-         </div>
-         <div className={`w-1/4 h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
-         <div onClick={handleImageClick } >
-         <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>
-         <motion.img
-            variants ={{
-                    hidden: { rotate: -360, transition:{duration: 1.5}},
-                    rotate: { rotate: 360, transition: { duration: 1.5},},}}
-                        initial="hidden"
-                        animate={rotate ? "rotate": "hidden"}
-                        alt="profile"
-                        className="spin-image"
-                        src="assets/color-wheel.png"
-    />
-         Change Theme manually
-         </button>
-         </div>
-         </div>
-         <div className={`w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-l ${fromBackground} ${viaAccent} ${toBackground} `}>
-            <div className={`font-semibold text-3xl m-6 flex justify-center items-center `} >
+          <div className={`w-2/3 h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-l ${fromBackground} ${viaAccent} ${toBackground}`}>
+            <div className={`font-semibold text-3xl m-6 flex justify-center items-center`}>
               <div className="text-center">
-                The <span className={`font-extrabold  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] bg-gradient-to-r  ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
+                The <span className={`font-extrabold  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] bg-gradient-to-r  ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this
+                Website is changing throughout the day.
                 <p className="text-xl pt-6">I choose bright colors for the day and dark colors for the night.</p>
               </div>
             </div>
           </div>
-         
-          <div className="w-2/3 h-80 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium flex-col">
-              <p className="text-2xl font-semibold mx-1 ">Check the demo  <a href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer" className={`uppercase ${primary} p-1 px-3 rounded-2xl `}>out now!</a> </p>
-          <p className="p-5 flex justify-center items-center leading-10 text-center">
-       ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH,
-           DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only shows the answered questions of this week, 
-           you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
 
+
+          <div className={`w-2/3 h-96 m-3 border-solid border-2 p-4 rounded-3xl ${primary} flex flex-col justify-center items-start pl-10`}>
+            <h2 className="font-bold text-3xl pb-3">Recipe-Scraper</h2>
+            <p className="text-lg">
+              I built a simple App interface where you can query through the recipes from the blog{' '}
+              <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all" rel="noreferrer" target="_blank">
+                Pinchofyum
+              </a>
+              .<br />
+              You can use different filters and get some random recipe ideas.<br />
+              This was a fun personal project where I used Node.js for the Web Scraping part, Supabase for storing and accessing data, React to display the
+              results, and TailwindCSS for styling. <br />
+            </p>
+            <div className="flex justify-start">
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500 flex" href="https://github.com/EricStrohmaier/UiUxRecipeApp" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Code Here</p>
+                  <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
+                </a>
+              </div>
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500" href="https://beautiful-recipe.netlify.app/" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Demo Here</p>
+                </a>
+              </div>
+            </div>
           </div>
-      
-          <div className="w-1/4 h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
-          <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10">
-            <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
-              <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
+          
+
+          <div className="w-1/4 h-96 border-solid border-2 rounded-3xl relative  m-3 overflow-hidden  group">
+            <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10">
+              <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
+                <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
+              </a>
+              <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group">
+                <button className="pb-3">{`This is a functional landing page using plain HTML, CSS and JavaScript for a night club.`}</button>
+              </div>
+            </div>
+          </div>
+
+          <div className={`w-1/4 h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`}>
+            <h2 className="font-bold text-3xl pb-3">E-Commerce Store</h2>
+            <p className="text-lg">
+            This Ecommerce App is a Next.js 13 ecommerce application that easily empowers users to shop for their favourite products. 
+            It leverages the power of Stripe for secure checkout, Sanity for content management, and offers an array of themes for a 
+            visually stunning experience. With fully implemented search and filter functionalities, finding the perfect product is just a few clicks away.
+              <br />
+              Techstack: Next.js, TypeScript, Sanity, Stripe and TailwindCSS, etc.
+            </p>
+
+            <div className="flex justify-start">
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500 flex  bg-gray-300" href="https://github.com/EricStrohmaier/e-commerce-store" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Code Here</p>
+                  <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
+                </a>
+              </div>
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500" href="https://ecommerce-eight-psi-33.vercel.app/" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Demo Here</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-2/3 h-fit  border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden">
+          <a title="Click for the Demo" target="_blank" rel="noreferrer" href="https://ecommerce-eight-psi-33.vercel.app/">
+              <img src={`${ecommerce}`} alt="ecommerce application" />
             </a>
-            <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group">
-            <button className="pb-3">{`This is a functional landing page using plain HTML, CSS and JavaScript for a night club.`}</button>
           </div>
-          </div>
-</div>
-      </div>
+         
+        </div>
+
       ) : (
    <div className="flex flex-wrap  w-full ">
-     
-  <div className="w-full h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
-  <a  target="_blank" rel="noreferrer" href="https://beautiful-recipe.netlify.app/"><img src={`${recipeScraper}`} alt="recipe-web-scraper"/> </a> </div>
-     <div className={`w-full h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`} >
-     <h2 className="font-bold text-3xl pb-3 ">Recipe-Web-Scraper</h2>
-      <p className=" text-lg">This App Scrapes all the recipes from the blog <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all"  rel="noreferrer" target="_blank" > Pinchofyum</a>.<br/>
-       I build a simple interface where you can query through  the data with different filters.<br/>
-       This was a fun personal project where I learnt a lot about Node.js. For the frontend I used React and TailwindCSS <br/>
-       </p>
-       <div className="flex  justify-start  ">
-           <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className=" hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/UiUxRecipeApp" target="_blank" rel="noreferrer">
-              <p className={`text-black`}>Code Here</p>
-              <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
-            </a>
+   {/* mobile */}
+
+   <div className={`w-full h-fit border-solid border-2 p-4 rounded-3xl flex flex-col  m-3 text-xl font-medium ${primary}`}>
+
+   <h2 className="font-bold text-3xl pb-3">OneTask</h2>
+            <p className="text-lg">
+              ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that
+              the user gets daily questions asked which get saved in a DB. The dashboard only shows the answered questions of this week, you can edit the answers and check them.
+              <br />
+              Techstack: Next.js, TypeScript, TailwindCSS, etc.
+            </p>
+
+          <div className="flex justify-start">
+            <div className="bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+              <a className="hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/onetask-app" target="_blank" rel="noreferrer">
+                <p className={`text-black`}>Code Here</p>
+                <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
+              </a>
             </div>
-            <div className=" bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold ">
-            <a className="hover:opacity-50 transition duration-500" href="https://beautiful-recipe.netlify.app/" target="_blank" rel="noreferrer">
-              <p className={`text-black`}>Demo Here</p>
-            </a>
-          </div></div>
-      
-     </div>
-     <div className={`w-full h-80 m-3  border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}  >
-     <button onClick={handleChangeTheme} className= {`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>
-     <motion.img
-            variants ={{
-                    hidden: { rotate: -360, transition:{duration: 1.5}},
-                    rotate: { rotate: 360, transition: { duration: 1.5},},}}
-                        initial="hidden"
-                        animate={rotate ? "rotate": "hidden"}
-                        alt="profile"
-                        className="spin-image"
-                        src="assets/color-wheel.png"
-    />Change Theme manually
-    </button>
-     </div>
-     <div className={`w-full h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-t ${fromBackground} ${viaAccent} ${toBackground} `}>
-        <div className={`font-semibold text-3xl m-6 flex justify-center items-center `} >
-          <div className="text-center pt-5">
-            The <span className={`font-extrabold bg-gradient-to-r  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this Website is changing throughout the day.
-            <p className="text-xl py-5">I choose bright themes for the day and dark themes for night.</p>
+            <div className="bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+              <a className="hover:opacity-50 transition duration-500" href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer">
+                <p className={`text-black`}>Demo Here</p>
+              </a>
+            </div>
           </div>
         </div>
-      </div> 
-      <div className="w-full h-fit border-solid border-2 rounded-3xl flex justify-center items-center m-3  text-xl font-medium ">
-      <p className="text-2xl font-semibold mx-1 ">Check the demo  <a href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer" className={`uppercase ${primary} p-1 px-3 rounded-2xl `}>out now!</a> </p>
-          <p className="p-5 flex justify-center items-center leading-10 text-center">
-       ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH,
-           DATABASE and API calls. The functionality is that the user gets daily questions asked witch get saved in a DB. The dashboard only shows the answered questions of this week, 
-           you can edit the answers and check them. <br></br> Techstack: Next.js, Javascript, TailwindCSS etc. </p>
+        
+          <div className="w-full h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
+          <a target="_blank" rel="noreferrer" href="https://beautiful-recipe.netlify.app/">
+            <img src={`${recipeScraper}`} alt="recipe-web-scraper" />
+          </a>
+        </div>
 
-      </div> 
-       <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
+        <div className={`w-full h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`}>
+          <h2 className="font-bold text-3xl pb-3">Recipe-Web-Scraper</h2>
+          <p className="text-lg">
+            This App Scrapes all the recipes from the blog{' '}
+            <a className="font-semibold hover:text-pink-500 hover:underline" href="https://pinchofyum.com/recipes/all" rel="noreferrer" target="_blank">
+              Pinchofyum
+            </a>.
+            <br />
+            I build a simple interface where you can query through the data with different filters.
+            <br />
+            This was a fun personal project where I learnt a lot about Node.js. For the frontend, I used React and TailwindCSS
+            <br />
+          </p>
+          <div className="flex justify-start">
+            <div className="bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+              <a className="hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/UiUxRecipeApp" target="_blank" rel="noreferrer">
+                <p className={`text-black`}>Code Here</p>
+                <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
+              </a>
+            </div>
+            <div className="bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+              <a className="hover:opacity-50 transition duration-500" href="https://beautiful-recipe.netlify.app/" target="_blank" rel="noreferrer">
+                <p className={`text-black`}>Demo Here</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className={`w-full h-80 m-3 border-solid border-2 rounded-3xl ${primary} flex justify-center items-center`}>
+          <button onClick={handleChangeTheme} className={`${secondary} hover:p-3 hover:text-lg duration-200 rounded-lg flex justify-center items-center p-2`}>
+            <motion.img
+              variants={{
+                hidden: { rotate: -360, transition: { duration: 1.5 } },
+                rotate: { rotate: 360, transition: { duration: 1.5 } },
+              }}
+              initial="hidden"
+              animate={rotate ? "rotate" : "hidden"}
+              alt="profile"
+              className="spin-image"
+              src="assets/color-wheel.png"
+            />
+            Change Theme manually
+          </button>
+        </div>
+
+        <div className={`w-full h-80 m-3 border-solid border-2 rounded-3xl flex justify-center items-center filter bg-blur-3xl bg-gradient-to-t ${fromBackground} ${viaAccent} ${toBackground}`}>
+          <div className={`font-semibold text-3xl m-6 flex justify-center items-center`}>
+            <div className="text-center pt-5">
+              The <span className={`font-extrabold bg-gradient-to-r  drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)] ${fromColor} ${toColor} text-transparent bg-clip-text`}>Color-Theme</span> for this
+              Website is changing throughout the day.
+              <p className="text-xl py-5">I choose bright themes for the day and dark themes for night.</p>
+            </div>
+          </div>
+        </div>
+
+       
+
+        <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
           <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10 overflow-hidden">
             <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
               <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
             </a>
             <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group">
-            <button className="px-3 pb-4">{`This is a functional landing page for a night club. Using plain HTML, CSS and JavaScript .`}</button>
+              <button className="px-3 pb-4">{`This is a functional landing page for a night club. Using plain HTML, CSS and JavaScript .`}</button>
+            </div>
           </div>
-          </div>
-  </div>
+        </div>
+
+        <div className="w-full h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
+          <a target="_blank" rel="noreferrer" href="https://ecommerce-eight-psi-33.vercel.app/">
+            <img src={`${ecommerce}`} alt="recipe-web-scraper" />
+          </a>
+        </div>
+
+        <div className={`w-full h-90 m-3 border-solid border-2 p-4 rounded-3xl ${secondary}`}>
+        <h2 className="font-bold text-3xl pb-3">E-Commerce Store</h2>
+            <p className="text-lg">
+            This Ecommerce App is a Next.js 13 ecommerce application that easily empowers users to shop for their favourite products. 
+            It leverages the power of Stripe for secure checkout, Sanity for content management, and offers an array of themes for a 
+            visually stunning experience. With fully implemented search and filter functionalities, finding the perfect product is just a few clicks away.
+              <br />
+              Techstack: Next.js, TypeScript, Sanity, Stripe and TailwindCSS, etc.
+            </p>
+
+            <div className="flex justify-start">
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500 flex  bg-gray-300" href="https://github.com/EricStrohmaier/e-commerce-store" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Code Here</p>
+                  <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
+                </a>
+              </div>
+              <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
+                <a className="hover:opacity-50 transition duration-500" href="https://ecommerce-eight-psi-33.vercel.app/" target="_blank" rel="noreferrer">
+                  <p className={`text-black`}>Demo Here</p>
+                </a>
+              </div>
+            </div>
+        </div>
+
   </div>
   )}
     </section>
