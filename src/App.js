@@ -26,9 +26,6 @@ function App() {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
  
 
-  const [firstHovered, setFirstHovered] = useState(false);
-  const [secondHoverd, setSecondHovered] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
@@ -217,7 +214,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         onMouseLeave={handleMouseLeave}
     > 
     <div
-        className={`absolute w-2/3 h-full scale-150 rounded-lg ${primary} z-0 filter blur-lg opacity-0 ${
+        className={`absolute w-2/3 h-full scale-150 rounded-lg ${primary} z-0  blur-lg opacity-0 ${
           isHovered ? 'opacity-80' : ''
         } duration-200`}
       ></div>
