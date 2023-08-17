@@ -9,7 +9,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import SocialMediaIcons from "../src/components/SocialMediaIcons";
 import Lottie from "lottie-react"
 import animationData from "../src/assets/18123-developer.json"
-import bnkr  from "./assets/moblie-bnkr.png"
+import bnkr  from "./assets/alinalicht.png"
 import recipeScraper from "./assets/recipe-scraper.jpg"
 import resume from "./assets/Resume.pdf"
 import oneTask from "./assets/onetaskapp.png"
@@ -77,7 +77,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
   };
 
   return (
-    <div  className={`${appClass} `}>
+    <div  className={`${appClass}  flex flex-col justify-center items-center`}>
     
       <Navbar
         isTopOfPage={isTopOfPage}
@@ -96,13 +96,13 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
         onClick={() => setSelectedPage("home")}
       />
 
-      <AnchorLink
+      {/* <AnchorLink
         href="#skills"
         className={`${
           selectedPage === "skills" ? selectedStyles : `${secondary}`
         } w-3 h-3 rounded-full`}
         onClick={() => setSelectedPage("skills")}
-      />
+      /> */}
 
       <AnchorLink
         href="#projects"
@@ -130,9 +130,9 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
        
     <section
       id="home"
-      className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10"
+      className="md:flex md:justify-between md:items-center gap-16 md:h-full py-10 max-w-[1500px] mx-4"
     >
-    <div className="basis-3/5  mt-12 md:mt-20 flex justify-center md:order-2">
+    <div className="basis-3/5  mt-12 md:mt-20 flex lg:justify-end justify-center md:order-2 lg:mr-[50px]">
     <motion.div
           initial="hidden"
           whileInView="visible"
@@ -152,7 +152,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             src="assets/profile-image.jpg"
           />
           {/* background blog   make it glowing on hold ? */}
-            <div className={`absolute top-0 left-0 w-full h-full scale-110 rounded-lg ${accent} z-0 filter blur-3xl opacity-0 group-hover:opacity-80  duration-500  `}></div>
+            <div className={`absolute top-0 left-0 w-full h-full scale-110 rounded-lg ${accent} z-0 blur-3xl opacity-0 group-hover:opacity-80  duration-500  `}></div>
           </div>
         ) : (
           <img
@@ -267,150 +267,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
     </section>
         </motion.div>
       </div>
-      {isDesktop && (<div className="w-1 h-7"></div>)}
-       <LineGradient />
-      <div className="w-5/6 mx-auto md:h-full ">
-         <motion.div
-          margin="0 0 -200px 0"
-          amount="all"
-          onViewportEnter={() => setSelectedPage("skills")}
-        >
-           <section id="skills" className="pt-2 pb-1 ">
-      {/* HEADER AND IMAGE SECTION */}
-      <div className="md:flex md:justify-between mt-10  ">
-        <motion.div
-          className="md:w-full"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-        >
-        {isAboveLarge ? (
-          <div className=" mx-4 "> 
-          <div className="flex flex-col items-center"> 
-          <p className="tracking-wider font-oswald font-semibold text-4xl mt-10 mb-10">SKILL  
-          <span className={`${textColorAccent}`}> LIBRARY</span>
-          </p>
-          </div>
-          {/* text stactic and flying in on hover  */}
-
-        <div className="flex flex-wrap w-full  relative ">
-          {/* Book shelfs to the left  animate seperat?*/}
-          <div
-        className="relative w-2/3 max-w-[200px] md:max-w-[350px] flex "
-        onMouseEnter={() => setFirstHovered(true)}
-        onMouseLeave={() => setFirstHovered(false)}
-      >
-        <img
-          alt="first book shelf"
-          className="relative transition-opacity duration-200"
-          src="assets/black-first-transparent.png"
-        />
-        <img
-          alt="yellow book shelf"
-          className={`absolute opacity-0 transition-opacity duration-200  ${
-            firstHovered ? 'opacity-100' : ''
-          }`}
-          src="assets/yellow-transparent.png"
-        />
-      </div>
-      <div className={`text-center flex flex-col absolute w-2/3 transition-opacity duration-600  left-96 top-24 text-2xl ${firstHovered || secondHoverd ? "opacity-0": "opacity-100"}`}>
-            <p className={`mb-10 font-bold ${textColorAccent} `}>Hover the book shelfs to find out more...</p>
-          <p > With a keen eye for detail and a passion for innovation, I specialize in transforming 
-          ideas into beautifully crafted websites. </p>  
-        </div>
-        
-      <div
-        className={`text-2xl absolute mt-20  text-right right-1/2  opacity-0 transition-opacity duration-200 ${
-          firstHovered ? 'opacity-100' : ''
-        }`}
-      >
-        <p className={`text-yellow-500 font-bold  underline underline-offset-2`} >Front-End</p>
-        <p>Next.js</p>
-          <p>Typescript</p>
-          <p>JavaScript</p>
-          <p>React</p>
-          <p>HTML</p>
-          <p>Tailwind CSS</p>
-      </div>
-    </div>
-    <div className="flex flex-wrap w-full relative">
-          {/* Book shelfs to the left  animate seperat?*/}
-          <div
-        className="relative w-2/3 max-w-[200px] md:max-w-[350px] flex float-left "
-        onMouseEnter={() => setSecondHovered(true)}
-        onMouseLeave={() => setSecondHovered(false)}
-      >
-        <img
-                alt="second book shelf"
-                className="relative transition-opacity duration-200"
-                src="assets/black-second-transparent.png"
-                />
-            <img
-          alt="blue book shelf"
-          className={`absolute opacity-0 transition-opacity duration-200 ${
-            secondHoverd ? 'opacity-100' : ''
-          }`}
-          src="assets/blue-second-transparent.png"
-        />
-      </div>
-
-      <div
-        className={`text-2xl absolute  text-right  right-1/2 opacity-0 transition-opacity duration-200 ${
-          secondHoverd ? 'opacity-100' : ''
-        }`}
-      >
-            <p className={`text-blue-500  font-bold  underline underline-offset-2`}>Back-End</p>
-            <p> Node.js</p>
-            <p> Express</p>
-            <p> MongoDB</p> 
-            <p> Supabase</p>
-          </div>
-        </div>  
-        </div>
-        ):(
-          <div className="flex flex-col items-center relative"> 
-          <p className="tracking-wider font-oswald font-semibold text-4xl mt-10 mb-10">SKILL  
-          <span className={`${textColorAccent}`}> LIBRARY</span>
-          </p>
-          <div className="flex flex-wrap w-full mx-auto text-xl text-center">
-          <div className="m-2 mb-10">
-          <p> With a keen eye for detail and a passion for innovation, I specialize in transforming 
-          ideas into beautifully crafted websites.</p>  
-          </div>
-  
-        <div className="w-1/2 text-center  ">
-          <p className={`text-yellow-500 font-bold  underline underline-offset-2`} >Front-End</p>
-          <p>Next.js</p>
-          <p>Typescript</p>
-          <p>JavaScript</p>
-          <p>React</p>
-          <p>HTML</p>
-          <p>Tailwind CSS</p>
-       
-        </div>
-        <div className="w-1/2 text-center ">
-        <p className={`text-blue-500  font-bold  underline underline-offset-2`}>Back-End</p>
-            <p> Node.js</p>
-            <p> Express</p>
-            <p> MongoDB</p>
-            <p> Supabase</p> 
-        </div>
-   
-  
-  </div>
-  </div>
-        )}
-        </motion.div>
-        
-    </div>
- </section>
-</motion.div> 
-</div>
+      
   
       {isDesktop &&(<div className="w-1 h-20"></div>)}
       <div className="w-5/6 mx-auto">
@@ -419,7 +276,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           amount="all"
           onViewportEnter={() => setSelectedPage("projects")}
         > 
-             <section id="projects" className="pt-16 pb-24  ">
+             <section id="projects" className="pt-16 pb-24 max-w-[1500px] ">
       {/* HEADINGS */}
       <motion.div
         className="md:w-2/5  "
@@ -450,7 +307,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
 
       {isDesktop ? (
         <div className="flex flex-wrap w-full">
-          <div className="w-2/3 h-fit  border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl font-medium flex-col">
+          <div className="w-2/3 h-fit  border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden text-xl  flex-col">
           <a title="Click for the Demo" target="_blank" rel="noreferrer" href="https://onetask-app.vercel.app/">
               <img src={`${oneTask}`} alt="onetask application" />
             </a>
@@ -460,20 +317,20 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
             <h2 className="font-bold text-3xl pb-3">OneTask</h2>
             <p className="text-lg">
               ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that
-              the user gets daily questions asked which get saved in a DB. The dashboard only shows the answered questions of this week, you can edit the answers and check them.
+              the user gets daily questions asked which get saved. The dashboard only shows the answered questions of this week, you can edit the answers and check them.
               <br />
-              Techstack: Next.js, TypeScript, TailwindCSS, etc.
+              Techstack: Next.js, TypeScript, TailwindCSS, etc. 
             </p>
 
             <div className="flex justify-start">
               <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
-                <a className="hover:opacity-50 transition duration-500 flex  bg-gray-300" href="https://github.com/EricStrohmaier/onetask-app" target="_blank" rel="noreferrer">
+                <a className="hover:opacity-50 transition duration-500 flex" href="https://github.com/EricStrohmaier/onetask-app" target="_blank" rel="noreferrer">
                   <p className={`text-black`}>Code Here</p>
                   <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
                 </a>
               </div>
               <div className="bg-gray-300 px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
-                <a className="hover:opacity-50 transition duration-500" href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer">
+                <a className="hover:opacity-50 transition duration-500"  href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer">
                   <p className={`text-black`}>Demo Here</p>
                 </a>
               </div>
@@ -540,11 +397,11 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
 
           <div className="w-1/4 h-96 border-solid border-2 rounded-3xl relative  m-3 overflow-hidden  group">
             <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10">
-              <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
+              <a target="_blank" rel="noreferrer" href="https://alinalicht.com/">
                 <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
               </a>
-              <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group">
-                <button className="pb-3">{`This is a functional landing page using plain HTML, CSS and JavaScript for a night club.`}</button>
+              <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group bg-black pt-2">
+                <button className="pb-3">{`This is a functional landing page using React for a upcoming Artist.`}</button>
               </div>
             </div>
           </div>
@@ -586,32 +443,32 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
    <div className="flex flex-wrap  w-full ">
    {/* mobile */}
 
-   <div className={`w-full h-fit border-solid border-2 p-4 rounded-3xl flex flex-col  m-3 text-xl font-medium ${primary}`}>
+   <div className={`w-full h-fit border-solid border-2 p-4 rounded-3xl flex flex-col  m-3 text-xl  ${primary}`}>
 
-   <h2 className="font-bold text-3xl pb-3">OneTask</h2>
+        <h2 className="font-bold text-3xl pb-3">OneTask</h2>
             <p className="text-lg">
               ONE TASK. It is a software-tool where I extensively worked with the CRUD functionality as well as USER AUTH, DATABASE and API calls. The functionality is that
               the user gets daily questions asked which get saved in a DB. The dashboard only shows the answered questions of this week, you can edit the answers and check them.
               <br />
-              Techstack: Next.js, TypeScript, TailwindCSS, etc.
+              Techstack: Next.js, TypeScript, TailwindCSS, etc. 
             </p>
 
-          <div className="flex justify-start">
+            <div className="flex justify-start">
             <div className="bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
-              <a className="hover:opacity-50 transition duration-500 flex text-black bg-white" href="https://github.com/EricStrohmaier/onetask-app" target="_blank" rel="noreferrer">
-                <p className={`text-black`}>Code Here</p>
+              <a className="hover:opacity-50 transition duration-500 flex text-black bg-white"  href="https://github.com/EricStrohmaier/onetask-app" target="_blank" rel="noreferrer">
+                <p className={`text-black text-sm`}>Code Here</p>
                 <img className="ml-1" alt="github-link" src="../assets/icons/github.png" />
               </a>
             </div>
             <div className="bg-white px-2 py-2 mt-3 m-1 flex rounded-lg w-fit font-bold">
               <a className="hover:opacity-50 transition duration-500" href="https://onetask-app.vercel.app/" target="_blank" rel="noreferrer">
-                <p className={`text-black`}>Demo Here</p>
+                <p className={`text-black text-sm`}>Demo Here</p>
               </a>
             </div>
           </div>
         </div>
         
-          <div className="w-full h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
+        <div className="w-full h-90 m-3 border-solid border-2 overflow-hidden rounded-3xl">
           <a target="_blank" rel="noreferrer" href="https://beautiful-recipe.netlify.app/">
             <img src={`${recipeScraper}`} alt="recipe-web-scraper" />
           </a>
@@ -676,11 +533,11 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
 
         <div className="w-full h-96 border-solid border-2 rounded-3xl flex justify-center items-center m-3 overflow-hidden relative group">
           <div className="hover:scale-105 duration-200 absolute w-full h-full top-0 left-0 z-10 overflow-hidden">
-            <a target="_blank" rel="noreferrer" href="https://thebnkr.banskolab.com/">
+            <a target="_blank" rel="noreferrer" href="https://alinalicht.com/">
               <img className="z-0 w-full h-full object-cover" alt="website" src={`${bnkr}`} />
             </a>
-            <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group">
-              <button className="px-3 pb-4">{`This is a functional landing page for a night club. Using plain HTML, CSS and JavaScript .`}</button>
+            <div className="absolute bottom-0 w-full z-20 text-white font-semibold text-center group pt-2 bg-black">
+              <button className="px-3 pb-4">{`This is a functional landing page for a upcoming Artist. Using React`}</button>
             </div>
           </div>
         </div>
@@ -732,7 +589,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
           amount="all"
           onViewportEnter={() => setSelectedPage("contact")}
         >
-   <section id="contact" className="contact py-24">
+   <section id="contact" className="contact py-24 max-w-[1500px]">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -857,7 +714,7 @@ const selectedStyles = `relative ${primary} before:absolute before:w-6 before:h-
       </div>
       {isDesktop &&(<div className="w-1 h-24"></div>)}
       </div>
-      <footer className={`h-28 ${primary}  pt-10`}>
+      <footer className={`h-28 ${primary} w-full  pt-10`}>
       <div className="w-10/12 mx-auto">
       
         <div className="md:flex  md:justify-between text-center ">
